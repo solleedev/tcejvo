@@ -57,7 +57,9 @@ function generate() {
   let randomizedRafsi = shuffleArray(filteredRafsi);
 
   // choose 24 rafsi + one random gismu
-  randomizedRafsi = randomizedRafsi.slice(0, LENGTH - 1);
+  if (LENGTH > 1) {
+    randomizedRafsi = randomizedRafsi.slice(0, LENGTH - 1);
+  }
 
   // pick a gismu to go last
   let last = randomItem(gismu);
