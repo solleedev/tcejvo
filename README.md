@@ -11,3 +11,5 @@ change the length by changing the LENGTH variable in index.js (set to 0 to make 
 LENGTH = the number of rafsi, btw
 
 enjoy ;)
+
+## warning: it sometimes doesnt make grammatical lujvo
