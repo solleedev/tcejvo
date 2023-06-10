@@ -133,9 +133,11 @@ function fix(list, lastItem) {
   let fixedList = [];
 
   list.forEach((value, index, array) => {
-    // adjust things that look like cmavo to add a y
-    if (startsWithCmavo(value) && index == 0) {
-      return fixedList.push(value + "y");
+    if (index == 0) {
+      // first word: adjust things that look like cmavo to add a y
+      if (startsWithCmavo(value) && index == 0) {
+        return fixedList.push(value + "y");
+      }
     }
 
     //  || startsWithCmavo(array[index + 1].slice(0, 1))
