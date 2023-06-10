@@ -64,12 +64,15 @@ function generate() {
   // pick a gismu to go last
   let last = randomItem(gismu);
 
-  fs.writeFileSync("./generatedUnfixed.json", JSON.stringify(randomizedRafsi));
+  fs.writeFileSync(
+    "./out/generatedUnfixed.json",
+    JSON.stringify(randomizedRafsi)
+  );
 
   let fixed = fix(randomizedRafsi, last);
 
   console.log(fixed.join(""));
-  fs.writeFileSync("./generatedFixed.json", JSON.stringify(fixed));
+  fs.writeFileSync("./out/generatedFixed.json", JSON.stringify(fixed));
 
   // classify the words as well
   let struct = randomizedRafsi.map((value) => {
@@ -86,7 +89,7 @@ function generate() {
       })
       .join("");
   });
-  fs.writeFileSync("./generatedStruct.json", JSON.stringify(struct));
+  fs.writeFileSync("./out/generatedStruct.json", JSON.stringify(struct));
 }
 
 function isConsonant(value) {
